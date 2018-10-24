@@ -1,0 +1,20 @@
+{
+  "apps" : [{
+    "name": "dynamodb.playground",
+    "script": "src/index.js",
+    "watch": ["src"],
+    "ignore_watch" : ["node_modules", "logs"],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "env": {
+      "NODE_ENV": "development",
+      "NODE_PATH": "src"
+    },
+
+    "merge_logs": true,
+    "error_file": "./logs/dynamodb.playground.stderr.log",
+    "out_file": "./logs/dynamodb.playground.stdout.log",
+    "pid_file": "./logs/dynamodb.playground.pid"
+  }]
+}
