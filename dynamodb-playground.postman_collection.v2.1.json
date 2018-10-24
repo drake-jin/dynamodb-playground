@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "9e9e03f3-3f93-4d1b-953b-9585bab01a5c",
+		"name": "dynamodb-playground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "주소록 목록 불러오기",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4000/users?order=desc&status=blind",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "status",
+							"value": "blind"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주소록 사용자 조회",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DrakeJin\",\n\t\"age\": \"27\",\n\t\"job\": \"air\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"developer\", \"idiot\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/users/23",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주소록 사용자 등록",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DrakeJin\",\n\t\"age\": \"27\",\n\t\"job\": \"air\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"developer\", \"idiot\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주소록 사용자 정보 변경",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DragonJin\",\n\t\"age\": \"17\",\n\t\"job\": \"developer\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"ass-hole\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/users/23",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주소록 사용자 상태 변경",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\": \"banned\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/users/23",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "주소록 사용자 정보 제거",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4000/users/23",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"23"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
