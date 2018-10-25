@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "pm2 start dynamodb.playground.json --watch && pm2 logs dynamodb.playground"
+    "start": "pm2 start dynamodb.playground.json --watch && pm2 logs dynamodb.playground",
+    "initialize": "NODE_PATH=src node src/scripts/dynamodb.init.js",
+    "reset": "NODE_PATH=src node src/scripts/dynamodb.reset.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/drake-jin/dynamodb-playground#readme",
   "dependencies": {
+    "aws-sdk": "^2.342.0",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",
     "koa-compress": "^3.0.0",
