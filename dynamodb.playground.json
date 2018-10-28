@@ -4,9 +4,6 @@
     "script": "src/index.js",
     "watch": ["src"],
     "ignore_watch" : ["node_modules", "logs"],
-    "watch_options": {
-      "followSymlinks": false
-    },
     "env": {
       "NODE_ENV": "development",
       "NODE_PATH": "src"
