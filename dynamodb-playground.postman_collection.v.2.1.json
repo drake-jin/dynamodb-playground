@@ -49,14 +49,14 @@
 					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DrakeJin\",\n\t\"age\": \"27\",\n\t\"job\": \"air\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"developer\", \"idiot\"]\n}"
 				},
 				"url": {
-					"raw": "localhost:4000/users/23",
+					"raw": "localhost:4000/users/3b75c71b-03d0-4e8b-a6eb-28583909c83c",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"users",
-						"23"
+						"3b75c71b-03d0-4e8b-a6eb-28583909c83c"
 					]
 				}
 			},
@@ -74,7 +74,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DrakeJin\",\n\t\"age\": \"27\",\n\t\"job\": \"air\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"developer\", \"idiot\"]\n}"
+					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DrakeJin\",\n\t\"age\": 27,\n\t\"job\": \"air\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"developer\", \"idiot\"]\n}"
 				},
 				"url": {
 					"raw": "localhost:4000/users",
@@ -101,17 +101,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"phone\": \"01055966935\",\n\t\"name\": \"YongJin\",\n\t\"nickname\": \"DragonJin\",\n\t\"age\": \"17\",\n\t\"job\": \"developer\",\n\t\"location\": \"Soeul\",\n\t\"groups\": [\"ass-hole\"]\n}"
+					"raw": "{\n\t\"phone\": \"12312366935\",\n\t\"nickname\": \"Dragon123Jin\",\n\t\"age\": \"17\",\n\t\"job\": \"developer\",\n\t\"location\": \"Seoul\",\n\t\"groups\": [\"ass-hole\"]\n}"
 				},
 				"url": {
-					"raw": "localhost:4000/users/23",
+					"raw": "localhost:4000/users/3b75c71b-03d0-4e8b-a6eb-28583909c83c",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"users",
-						"23"
+						"3b75c71b-03d0-4e8b-a6eb-28583909c83c"
 					]
 				}
 			},
@@ -129,17 +129,17 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"status\": \"banned\"\n}"
+					"raw": "{\n\t\"status\": \"display\"\n}"
 				},
 				"url": {
-					"raw": "localhost:4000/users/23",
+					"raw": "localhost:4000/users/819a7e0f-27bd-42b1-bde2-3c49cafe8cb9",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"users",
-						"23"
+						"819a7e0f-27bd-42b1-bde2-3c49cafe8cb9"
 					]
 				}
 			},
@@ -152,14 +152,14 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:4000/users/23",
+					"raw": "localhost:4000/users/819a7e0f-27bd-42b1-bde2-3c49cafe8cb9",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"users",
-						"23"
+						"819a7e0f-27bd-42b1-bde2-3c49cafe8cb9"
 					]
 				}
 			},
