@@ -27,6 +27,9 @@ module.exports = [
       {
         AttributeName: 'status',
         AttributeType: 'S',
+        // 초기에 정렬키로 사용하려 했었는데,... 수정이 불가능하다.
+        // 그래서 변경이 필요한 status 속성은 키 조건으로는 적합하지 않다.
+        // id속성같은 불변의 요소에 대해서 키를 지정해주어야 한다.
       },
       {
         AttributeName: 'phone',
@@ -36,16 +39,20 @@ module.exports = [
         AttributeName: 'name',
         AttributeType: 'S',
       },
+      {
+        AttributeName: 'age',
+        AttributeType: 'N',
+      },
       // 주의사항: AttributeDefinitions.length === KeySchema.length + GlobalSecondaryIndexes.length
     ],
-    KeySchema: [ // 기본키에 대해서 지정합니다 . HASH 만, HASH+RANGE 조합만 사용가능합니다. 기본키는 2개를 넘을 수 없습니다.
+    KeySchema: [ // 기본키에 대해서 지정합니다 . (Only)HASH 또는  HASH+RANGE 조합만 사용가능합니다. 기본키는 2개를 넘을 수 없습니다.
       {
         AttributeName: 'id',
         KeyType: 'HASH', // 파티션 키(Partition Key)
       },
       {
-        AttributeName: 'status',
-        KeyType: 'RANGE', // 정렬 키(Sort Key)
+        AttributeName: 'name',
+        KeyType: 'RANGE', // 정렬 키(RANGE Key or Sort Key)
       },
     ],
     GlobalSecondaryIndexes: [ // 최대 5개 까지가 한계임
@@ -100,6 +107,22 @@ module.exports = [
           WriteCapacityUnits: 3,
         }
       },
+      {
+        IndexName: 'GSI_id', 
+        KeySchema: [
+          {
+            AttributeName: 'id',
+            KeyType: 'HASH',
+          },
+        ],
+        Projection: {
+          ProjectionType: 'ALL',
+        },
+        ProvisionedThroughput: {
+          ReadCapacityUnits: 3,
+          WriteCapacityUnits: 3,
+        }
+      },
     ],
     /*
       Reference: https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/LSI.html
@@ -126,14 +149,14 @@ module.exports = [
       // https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/LSI.html
       // LSI의 KeySchema에서는 테이블의 HASH를 반드시 포함하여야 한다. 그리고 LSI의 RANGE키는 자신이 정렬하려고자 했던 키를 사용한다.
       {
-        IndexName: 'LSI_name',
+        IndexName: 'LSI_age',
         KeySchema: [
           {
             AttributeName: 'id', 
             KeyType: 'HASH',
           },
           {
-            AttributeName: 'name',
+            AttributeName: 'age',
             KeyType: 'RANGE',
           },
         ],

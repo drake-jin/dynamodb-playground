@@ -37,13 +37,14 @@ module.exports.postUserValidator = async (ctx, next) => {
   }
 
   await next()
+  
 }
 
 module.exports.getUserValidator = async (ctx, next) => {
   const { params } = ctx
 
   const schema = Joi.object({
-    id: Joi.number().required(),
+    id: Joi.string().min(2).max(50).required(),
   })
   const validation = Joi.validate(params, schema)
   if (validation.error) {
@@ -59,13 +60,12 @@ module.exports.putUserValidator = async (ctx, next) => {
 
   const schema = Joi.object({
     phone: Joi.string().regex(/^[0-9]{11}$/i).required(),
-    name: Joi.string().min(2).max(50).required(),
     nickname: Joi.string().min(2).max(50).required(),
     age: Joi.number().required(),
     job: Joi.string().min(2).max(50).required(),
     location: Joi.string().min(2).max(50).required(),
     groups: Joi.array(),
-    id: Joi.number().required(),
+    id: Joi.string().min(2).max(50).required(),
   })
   const validation = Joi.validate({ ...body, ...params }, schema)
   if (validation.error) {
@@ -95,7 +95,7 @@ module.exports.deleteUserValidator = async (ctx, next) => {
   const { params } = ctx
 
   const schema = Joi.object({
-    id: Joi.number().required(),
+    id: Joi.string().min(2).max(50).required(),
   })
   const validation = Joi.validate(params, schema)
   if (validation.error) {
